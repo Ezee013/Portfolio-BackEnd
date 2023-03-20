@@ -14,13 +14,12 @@ public class PersonaService implements IPersonaService{
     @Autowired
     public PersonaRepository persoRepo;
     
-     @Override
+    @Override
     public List<Persona> getPersona() {
         List<Persona> persona = persoRepo.findAll();
         return persona;
         
     }
-    
     
     @Override
     public void savePersona(Persona per) {
