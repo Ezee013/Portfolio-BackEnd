@@ -1,15 +1,14 @@
-
 package com.portfolio.Portfolio.Dto;
 
 import jakarta.validation.constraints.NotBlank;
+import java.util.Date;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter @Setter
-public class DtoExperiencia {
-    
+public class DtoEducacion {
     @NotBlank
-    private String nombre;
+    private String institucion;
     
     @NotBlank
     private int inicio;
@@ -22,11 +21,11 @@ public class DtoExperiencia {
     
     private String img;
 
-    public DtoExperiencia() {
+    public DtoEducacion() {
     }
 
-    public DtoExperiencia(String nombre, int inicio, int fin, String descripcion, String img) {
-        this.nombre = nombre;
+    public DtoEducacion(String institucion, int inicio, int fin, String descripcion, String img) {
+        this.institucion = institucion;
         this.inicio = inicio;
         this.fin = fin;
         this.descripcion = descripcion;

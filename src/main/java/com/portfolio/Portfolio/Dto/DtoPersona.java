@@ -6,30 +6,29 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Getter @Setter
-public class DtoExperiencia {
-    
+public class DtoPersona {
     @NotBlank
     private String nombre;
     
     @NotBlank
-    private int inicio;
-    
-    @NotBlank
-    private int fin;
+    private String apellido;
     
     @NotBlank
     private String descripcion;
     
+    @NotBlank
+    private String profesion;
+    
     private String img;
 
-    public DtoExperiencia() {
+    public DtoPersona() {
     }
 
-    public DtoExperiencia(String nombre, int inicio, int fin, String descripcion, String img) {
+    public DtoPersona(String nombre, String apellido, String descripcion, String profesion, String img) {
         this.nombre = nombre;
-        this.inicio = inicio;
-        this.fin = fin;
+        this.apellido = apellido;
         this.descripcion = descripcion;
+        this.profesion = profesion;
         this.img = img;
     }
 

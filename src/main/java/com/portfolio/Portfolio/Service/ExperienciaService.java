@@ -1,6 +1,7 @@
 
 package com.portfolio.Portfolio.Service;
 
+import com.portfolio.Portfolio.Interface.IExperienciaService;
 import com.portfolio.Portfolio.Model.Experiencia;
 import com.portfolio.Portfolio.Repository.ExperienciaRepository;
 import jakarta.transaction.Transactional;
@@ -11,37 +12,44 @@ import org.springframework.stereotype.Service;
 
 @Service
 @Transactional
-public class ExperienciaService {
+public class ExperienciaService implements IExperienciaService {
     
      @Autowired
-     ExperienciaRepository rExperiencia;
+     ExperienciaRepository xpRepo;
      
-     public List<Experiencia> list(){
-         return rExperiencia.findAll();
-     }
-     
-     public Optional<Experiencia> getOne(int id){
-         return rExperiencia.findById(id);
-     }
-     
-     public Optional<Experiencia> getByNombreXP(String nombre){
-         return rExperiencia.findByNombreE(nombre);
-     }
-     
-     public void save(Experiencia exp){
-         rExperiencia.save(exp);
-     }
-     
-     public void delete(int id){
-         rExperiencia.deleteById(id);
-     }
-     
-      public boolean existsById(int id){
-         return rExperiencia.existsById(id);
-     }
-     
-     public boolean existsByNombreXP(String nombre){
-         return rExperiencia.existsByNombreE(nombre);
-     }
-     
+    @Override
+    public List<Experiencia> list(){
+        return xpRepo.findAll();
+    }
+    
+    @Override
+    public Optional<Experiencia> getOne(int id){
+        return xpRepo.findById(id);
+    }
+    
+    @Override
+    public Optional<Experiencia> getByNombre(String nombre){
+        return xpRepo.findByNombre(nombre);
+    }
+    
+    @Override
+    public void save(Experiencia xp){
+        xpRepo.save(xp);
+    }
+    
+    @Override
+    public void delete(int id){
+        xpRepo.deleteById(id);
+    }
+    
+    @Override
+    public boolean existsById(int id){
+        return xpRepo.existsById(id);
+    }
+    
+    @Override
+    public boolean existsByNombre(String nombre){
+        return xpRepo.existsByNombre(nombre);
+    }
+
 }

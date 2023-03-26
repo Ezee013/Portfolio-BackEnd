@@ -1,4 +1,3 @@
-
 package com.portfolio.Portfolio.Model;
 
 import jakarta.persistence.Entity;
@@ -9,35 +8,32 @@ import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 
-@Getter @Setter
+@Getter
+@Setter
 @Entity
-public class Experiencia {
+public class Proyecto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    
+
     @NotNull
-    private String nombre;
-    
-    @NotNull
-    private int inicio;
-    
-    @NotNull
-    private int fin;
-    
+    private String titulo;
+
     @NotNull
     private String descripcion;
     
+     @NotNull
+    private String link;
+    
     private String img;
 
-    public Experiencia() {
+    public Proyecto() {
     }
 
-    public Experiencia(String nombre, int inicio, int fin, String descripcion, String img) {
-        this.nombre = nombre;
-        this.inicio = inicio;
-        this.fin = fin;
+    public Proyecto(String titulo, String descripcion, String link, String img) {
+        this.titulo = titulo;
         this.descripcion = descripcion;
+        this.link = link;
         this.img = img;
     }
 

@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
- */
 package com.portfolio.Portfolio.Repository;
 
 import com.portfolio.Portfolio.Model.Experiencia;
@@ -11,7 +7,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ExperienciaRepository extends JpaRepository<Experiencia, Integer>{
-    
-    public Optional<Experiencia> findByNombreE(String nombreXP);
-    public boolean existsByNombreE(String nombreXP);
+    public Optional<Experiencia> findByNombre(String nombre);
+    public boolean existsByNombre(String nombre);
 }

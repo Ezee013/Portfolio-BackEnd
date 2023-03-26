@@ -3,15 +3,22 @@ package com.portfolio.Portfolio.Interface;
 
 import com.portfolio.Portfolio.Model.Persona;
 import java.util.List;
+import java.util.Optional;
 
 
 public interface IPersonaService {
     
-    public List<Persona> getPersona();
+    public List<Persona> list();
     
-    public void savePersona(Persona per);
+    public Optional<Persona> getOne(int id);
     
-    public void deletePersona(Long id);
+    public Optional<Persona> getByNombre(String nombre);
     
-    public Persona findPersona(Long id);
+    public void save(Persona educacion);
+    
+    public void delete(int id);
+    
+    public boolean existsById(int id);
+    
+    public boolean existsByNombre(String nombre);
 }

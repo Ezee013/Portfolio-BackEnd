@@ -1,4 +1,3 @@
-
 package com.portfolio.Portfolio.Model;
 
 import jakarta.persistence.Entity;
@@ -11,7 +10,7 @@ import lombok.Setter;
 
 @Getter @Setter
 @Entity
-public class Experiencia {
+public class Skill {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -20,25 +19,13 @@ public class Experiencia {
     private String nombre;
     
     @NotNull
-    private int inicio;
-    
-    @NotNull
-    private int fin;
-    
-    @NotNull
-    private String descripcion;
-    
-    private String img;
+    private int porcentaje;
 
-    public Experiencia() {
+    public Skill() {
     }
 
-    public Experiencia(String nombre, int inicio, int fin, String descripcion, String img) {
+    public Skill(String nombre, int porcentaje) {
         this.nombre = nombre;
-        this.inicio = inicio;
-        this.fin = fin;
-        this.descripcion = descripcion;
-        this.img = img;
+        this.porcentaje = porcentaje;
     }
-
 }
